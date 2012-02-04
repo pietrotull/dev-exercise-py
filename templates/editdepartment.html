@@ -1,0 +1,37 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>Edit Department</title>
+<link href="css/main.css" rel="stylesheet" type="text/css"> 
+</head>
+<body>
+<div class="core">
+<h1>Edit Deps</h1>
+
+{% if message %}
+<div class="messagebox">
+<p>{{message}}!</p>
+</div>
+{% endif %}
+
+<form action="" method="post">
+<input type="hidden" value="{{dep.key}}" />
+<table>
+<tr>
+    <td>Name: </td><td><input type="text" name="name" id="name" value="{{dep.name}}" /></td>
+</tr>
+<tr>
+    <td>Description: </td><td><input type="text" size="50" name="description" id="description" value="{{dep.description}}"/></td>
+</tr>
+<tr>
+<td/>
+<td><input type="submit" value="Save" /><input type="reset" value="Cancel" /></td>
+</tr>
+</table>
+</form>
+</p>
+<p><a href="/deldepartment?key={{dep.key}}">Delete this Department</a></p>
+<p><a href="/department">Department Page</a></p>
+</div>
+</body>
+</html>

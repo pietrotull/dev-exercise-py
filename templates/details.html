@@ -1,0 +1,21 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>Department Details - {{dep.name}}</title>
+<link href="css/main.css" rel="stylesheet" type="text/css"> 
+</head>
+<body>
+<div class="core">
+<h1>Department: {{dep.name}}</h1>
+<p>Description: {{dep.description}}</p>
+<p>Members:
+{% for emp in emps %}
+<li>{{emp.lastname}}, {{emp.firstname}}</li>
+{% endfor %}
+<ul>
+</ul>
+<p><a href="/editdepartment?key={{dep.key}}">Edit</a> </p>
+<p><a href="/department">back to departments</a></p>
+</div>
+</body>
+</html>

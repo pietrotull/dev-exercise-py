@@ -1,0 +1,44 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>Employee</title>
+<link href="css/main.css" rel="stylesheet" type="text/css"> 
+</head>
+<body>
+<div class="core">
+<h1>Employee</h1>
+<p>
+<ul>
+{% for emp in emps %}
+<li><a href="/editemployee?key={{emp.key}}">{{emp.lastname}}, {{emp.firstname}}</a> - ({{emp.department_ref.name}})</li>
+{% endfor %}
+</ul>
+</p>
+<p>
+<form action="" method="post" accept-charset="utf-8">
+<table>
+<tr>
+    <td>Firstname: </td><td><input type="text" name="firstname" id="firstname" /></td>
+</tr>
+<tr>
+    <td>Lastname: </td><td><input type="text" name="lastname" id="lastname" /></td>
+</tr>
+<tr>
+    <td>Department: </td><td><select name="department_key">
+        {% for dep in deps%}
+        <option value="{{dep.key}}">{{dep.name}}</option>
+        {% endfor %}
+    </select>
+    </td>
+</tr>
+<tr>
+<td></td>
+    <td><input type="submit" value="Save" /><input type="reset" value="Cancel" /></td>
+</tr>
+</table>
+</form>
+</p>
+<p><a href="/">Mainpage</a></p>
+</div>
+</body>
+</html>
